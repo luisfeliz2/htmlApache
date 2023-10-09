@@ -15,7 +15,7 @@
             border: 1px solid #ccc;
             overflow-y: scroll;
             padding: 10px;
-            background-color: blue;
+           
         }
 
         #new-message {
@@ -35,16 +35,17 @@
                 $newMessage = $_POST["new_message"];
 
                 if (!empty($newMessage)) {
-                     $chatMessages.= "<p>$newMessage</p>";
-                  
+                 echo $newMessage;
+                     $chatMessages .= $chatMessages. "<p>$newMessage</p>";
+                     echo $chatMessages;
                 }else{
-                    echo "el mensaje no puede estar vacio";
+                    echo "El mensaje no puede estar vacio";
                 }
                 
                 
             }
         
-                echo $chatMessages;
+                echo $chatMessages
             
             ?>
            
