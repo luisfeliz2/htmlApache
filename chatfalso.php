@@ -9,51 +9,42 @@
             margin: 0 auto;
         }
 
-        #chat-area {
-            width: 100%;
-            height: 300px;
-            border: 1px solid #ccc;
-            overflow-y: scroll;
-            padding: 10px;
-           
-        }
-
+     
         #new-message {
             width: 100%;
             margin-bottom: 10px;
+        }
+        #prueba{
+          
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <div id="chat-container">
         <h2>Chat Falso</h2>
-        <div id="chat-area">
-   
+
             <?php
             $chatMessages='';
-            if (isset($_POST['new_message'])) {
-                $newMessage = $_POST["new_message"];
+            $mensaje="";
+            if (isset($_POST['new_message'])) { //si existe el input 
+                $nuevoMensaje = $_POST["new_message"];
 
-                if (!empty($newMessage)) {
-                 echo $newMessage;
-                     $chatMessages .= $chatMessages. "<p>$newMessage</p>";
-                     echo $chatMessages;
+                if (!empty($nuevoMensaje)) {
+               
+                     $chatMessages .= $chatMessages. $nuevoMensaje;
+                     $area=$_POST["area"];
+                     $mensaje .=$chatMessages."\n".$area;
                 }else{
                     echo "El mensaje no puede estar vacio";
+                    $mensaje.="".$_POST["area"]; 
                 }
-                
-                
+     
             }
-        
-                echo $chatMessages
-            
+
             ?>
-           
 
-          
-        </div>
-
-        <div>
+        <div id="prueba" >
             <?php
             echo "<p>hola buenos dias</p>";
             echo "la fecha actual es ".  date('d,M,Y');
@@ -61,8 +52,9 @@
 
         </div>
         <form method="post">
-            <input type="text" name="new_message" id="new-message" placeholder="Nuevo mensaje">
-            <input type="text"  name="recuperar"  value="" id="">
+            <input type="text"  name="new_message" id="new-message" placeholder="Nuevo mensaje">
+           
+            <textarea name="area" id="" cols="30" rows="10" readonly><?php echo $mensaje?> </textarea>
 
             <button type="submit">Enviar</button>
         </form>
