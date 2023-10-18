@@ -1,0 +1,16 @@
+.errores{
+    color:red;
+    font-size: 2em;
+}
+
+body{
+    margin: 100px;
+}
+
+form{
+    background-color: aquamarine;
+    border: 3px black solid;
+    height: 700px;
+    padding: 20px;
+    
+}
