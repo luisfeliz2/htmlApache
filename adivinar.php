@@ -1,10 +1,11 @@
 <?php
+session_start();    
 $randomNumber = null;
 $attempts = 0;
 $message = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (!isset($_POST['randomNumber'])) {
+    if (!isset($_SESSION['randomNumber'])) {
         // Generar un número aleatorio si no se ha generado aún
         $randomNumber = rand(1, 100);
         $attempts = 0;
@@ -44,8 +45,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <p><?php echo $message; ?></p>
     <?php if ($randomNumber !== null) : ?>
     <form action="" method="post">
-        <input type="hidden" name="randomNumber" value="<?php echo $randomNumber; ?>">
-        <input type="hidden" name="attempts" value="<?php echo $attempts; ?>">
+
+        <!-- <input type="hidden" name="randomNumber" value="<?php echo $randomNumber; ?>">
+        <input type="hidden" name="attempts" value="<?php echo $attempts; ?>"> -->
+
         <p>Introduce un número entre 1 y 100:</p>
         <input type="number" name="guess" required>
         <button type="submit">Adivinar</button>
