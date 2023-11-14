@@ -20,11 +20,17 @@
 */
 
 foreach($precios as $producto=>$precio){
-    $stock[$producto]=$_REQUEST["$stock$producto"];
-    $precio[$producto]=$_REQUEST["$precio$producto"];
+    
+   
+    $precios[$precio]=$_REQUEST["$producto"];
+
+}
+
+foreach($stock as $producto=>$precio){
+    $stock[$producto]=$_REQUEST["$producto"];
 }
 echo "precio";
-echo mapaAHtml($precio);
+echo mapaAHtml($precios);
 
 echo "stock";
 echo mapaAHtml($stock);
