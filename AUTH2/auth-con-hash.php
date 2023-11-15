@@ -27,6 +27,7 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
     header('HTTP/1.0 401 Unauthorized');
     echo "<h1>Acceso denegado 1</h1>";
     // URL entera para quitar parámetros extra:
+
     echo "<a href=\"logout-hash.php?id=$random\">Volver a intentar</a>";
     exit;
 }

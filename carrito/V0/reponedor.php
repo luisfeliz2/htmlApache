@@ -12,7 +12,9 @@
 
 <h2>Stock</h2>
 <?php
-if (!isset($_SERVER["PHP_AUTH_SERVER"])){
+include("usuarioContrasenia.php");
+$random = uniqId(); 
+if (!isset($_SERVER["PHP_AUTH_USER"])){
     header('WWW-Authenticate: Basic realm="Acceso restringuido"');
     header('HTTP/1.0 401 Unauthorized');
     echo "<h1>Acceso denegado 1</h1>";
@@ -22,7 +24,11 @@ if (!isset($_SERVER["PHP_AUTH_SERVER"])){
 }
 
 
-
+if(($_SERVER["PHP_AUTH_USER"]==$user)&& (password_verify( $_SERVER["PHP_AUTH_PW"],$password))){
+    echo "Bienvenido";
+}else{
+   
+}
 
 
   require ("common-stock.php")  ;
