@@ -1,0 +1,9 @@
+.imagen{
+    height: 500px;
+    width: 500px;
+    background-image:url("https://cdn.ethic.es/wp-content/uploads/2023/03/imagen.jpg") ;
+    font-size: medium;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    
+}

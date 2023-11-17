@@ -13,7 +13,7 @@ include "common-stock.php";
 	 if (isset($_POST["$producto"])) {
        	 	$valor = $_SESSION["$producto"] ?? 0;
 	        $valor = $valor + (intval($_POST["$producto"]) ?? 0);
-	 	$max = $stock["$producto"] - $valor;
+	 		$max = $stock["$producto"] - $valor;
 	 }
 	 else $max = $stock["$producto"];
 	 echo "<input type=\"number\" name=\"$producto\" max=\"$max\"/></p>";

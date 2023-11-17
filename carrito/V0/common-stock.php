@@ -13,7 +13,12 @@ if (!file_exists(RUTA_ARCHIVO_STOCK) || !($stock = unserialize(file_get_contents
 if (!file_exists(RUTA_ARCHIVO_PRECIOS) || !($precios = unserialize(file_get_contents(RUTA_ARCHIVO_PRECIOS)))) {
     // si falla la lectura del stock genero uno por defecto y lo grabo a disco
     echo "Error leyendo archivo " . RUTA_ARCHIVO_PRECIOS;
+
+    
     $precios = array( "platanos" => 3, "fresas" => 6, "kiwis" => 4 );
+
+
+
     if (! @file_put_contents(RUTA_ARCHIVO_PRECIOS,serialize($precios))) {
 		echo "<p>Error escribiendo archivo " .  RUTA_ARCHIVO_PRECIOS . "</p>";
 	}

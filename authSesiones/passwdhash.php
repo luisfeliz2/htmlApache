@@ -1,6 +1,6 @@
 
 <?php
-$passwd=password_hash("pepe", PASSWORD_DEFAULT);
+$passwd=password_hash("pepe2022", PASSWORD_DEFAULT);
 
 
 ?>
